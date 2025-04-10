@@ -81,7 +81,7 @@ echo "Registering zrok-share service to systemd..."
 ZROK_PATH=$(command -v zrok)
 SERVICE_NAME="zrok-share.service"
 SERVICE_FILE_PATH="/etc/systemd/system/${SERVICE_NAME}"
-COMMAND="${ZROK_PATH} share reserved ${zrok_identifier}"
+COMMAND="${ZROK_PATH} share reserved ${zrok_identifier} --headless"
 SERVICE_CONTENT="[Unit]
 Description=Zrok Reserved Share for ${zrok_identifier}
 After=network.target ssh.service
