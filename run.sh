@@ -17,8 +17,6 @@ sudo apt remove -y openssh-server
 echo "Installing OpenSSH Server..."
 sudo apt install -y openssh-server
 
-exec < /dev/tty
-
 while true; do
     echo "Enter SSH port number you want (default: 10022, valid: 1024-65535)"
     read -p "> " port
