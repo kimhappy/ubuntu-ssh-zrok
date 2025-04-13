@@ -49,14 +49,14 @@ while true; do
 done
 
 while true; do
-    echo "Make your unique identifier (lowercase alphanumeric, between 4 and 32 characters in length)"
+    echo "Make your unique identifier (lowercase alphanumeric, 4-32 characters in length)"
     read -p "> " zrok_identifier
 
-    if [[ "$zrok_identifier" =~ ^[a-z0-9]{4,32}$ ]]; then
-        if zrok reserve public "127.0.0.1:${SSH_PORT}" --backend-mode tcpTunnel --unique-name "$zrok_identifier"; then
+    if [[ "$zrok_identifier" =~ ^[a-z]{4,32}$ ]]; then
+        if zrok reserve private "127.0.0.1:${SSH_PORT}" --backend-mode tcpTunnel --unique-name "$zrok_identifier"; then
             break
         else
-            echo "Failed to reserve public tunnel with identifier $zrok_identifier. Please enter another one."
+            echo "Failed to reserve private tunnel with identifier $zrok_identifier. Please enter another one."
         fi
     else
         echo "Invalid identifier. Please enter a valid one."
