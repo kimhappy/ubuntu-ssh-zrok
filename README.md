@@ -41,10 +41,10 @@ This guide explains how to access a WSL2 environment on a remote machine using S
 ## Setting Up the Local Machine
 1. Install Zrok on your local machine according to your operating system by following [this guide](https://docs.zrok.io/docs/guides/install).
 2. Enter `zrok enable <Zrok token>` to activate Zrok (do not include the brackets).
-    - The *Zrok token* can be different from the one you entered on the remote machine.
+    - For *Zrok token*, use the same one from the remote machine.
 
 ## Connecting to the Remote Machine from the Local Machine
-1. Enter `zrok access public <Zrok identifier> --bind 127.0.0.1:<Port number>` to connect the remote machine's port to your local machine's port.
+1. Enter `zrok access private <Zrok identifier> --bind 127.0.0.1:<Port number>` to connect the remote machine's port to your local machine's port.
     - For *Zrok identifier*, enter the same identifier you set on the remote machine.
     - For *Port number*, enter a number between 1024 and 65535.
 2. Enter `ssh <Username>@127.0.0.1 -p <Port number>` to connect to the remote machine.
